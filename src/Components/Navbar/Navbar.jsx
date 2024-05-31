@@ -13,7 +13,6 @@ const Navbar = () => {
     const [menu, setMenu] = useState(false);
     let wishlist = useSelector(s => s.heart.value)
     const carts = useSelector(state => state.cart.value);
-    console.log(wishlist);
     
 
     return (

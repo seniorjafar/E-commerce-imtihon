@@ -1,14 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import { FaFacebookF } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-// import ReactImageMagnify from 'react-image-magnify';
-import { CiHeart } from "react-icons/ci";
-import './SingleRouter.scss'
-import { GoHeart } from "react-icons/go";
-import { LuShoppingCart } from "react-icons/lu";
-import { FaStar } from "react-icons/fa6";
+import Loading from '../../Components/Loading/Loading';
+import './Router.scss'
 import rasm1 from '../../assets/rasmlar/r5.png'
 import { Link } from 'react-router-dom';
 import rasm2 from  '../../assets/rasmlar/r4.png'
@@ -18,16 +11,19 @@ import { VscChevronUp } from "react-icons/vsc";
 import { VscChevronDown } from "react-icons/vsc";
 import rasm5 from '../../assets/rasmlar/r10.png'
 import Footer from '../../Components/Footer/Footer';
-import LoadingAll from '../../Components/LoadingALL/LoadingAll';
+import { GoHeart } from "react-icons/go";
+import { LuShoppingCart } from "react-icons/lu";
+import { FaStar } from "react-icons/fa6";
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
 import {useGetDetialProductQuery} from '../../Components/context/productApi'
-import Loading from '../../Components/Loading/Loading';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import {useGetProductsQuery} from '../../Components/context/productApi';
-import PruductTop from '../../Components/PruductTop/index'
+import PruductTop from '../../Components/Pruducts'
 const SingleRoute = () => {
     const {data:data1 } = useGetProductsQuery();
     const[count1,setCount1] = useState(true);
@@ -83,7 +79,7 @@ const SingleRoute = () => {
 
 
     let {id} = useParams()
-    let {data,isError,isLoading,error} = useGetDetialProductQuery(id)
+    let {data,isLoading,} = useGetDetialProductQuery(id)
     return (
         <div >
             <PruductTop/>
@@ -104,7 +100,7 @@ const SingleRoute = () => {
    
           </div>
           {
-            isLoading ? <LoadingAll/> : ""
+            isLoading ? <Loading/> : ""
           }
           <div className="single_row_link container">
           <div className="single_week">

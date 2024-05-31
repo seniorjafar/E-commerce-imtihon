@@ -40,6 +40,7 @@ const data = [
     },
 ];
 
+
 const Featured = () => {
     const [name, setName] = useState('');
 
@@ -74,10 +75,13 @@ const Featured = () => {
                     <Swiper
                         loop={true}
                         navigation={true}
-                        modules={[Navigation, Autoplay]}
+                        modules={[Navigation]}
                         autoplay={{
                             delay: 3000,
                             disableOnInteraction: false,
+                        }}
+                         pagination={{
+                            clickable: true,
                         }}
                         className="mySwiper"
                     >
@@ -97,6 +101,7 @@ const Featured = () => {
                             </div>
                         </SwiperSlide>
                     </Swiper>
+                    
 
                     <div className="bannir_input">
                         <div className="altt">

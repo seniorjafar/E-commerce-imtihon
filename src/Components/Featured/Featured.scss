@@ -18,18 +18,19 @@
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        padding: 50px 0;
+        padding: 40px 0;
         .featur_all{
             display: flex;
             align-items: self-start;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 10px;
             .start{
                 display: flex;
                align-items: center;
                gap: 10px;
                margin-top: 20px;
+                           transition: 3s;
                 .star_all{
                     svg{
                         color: yellow;

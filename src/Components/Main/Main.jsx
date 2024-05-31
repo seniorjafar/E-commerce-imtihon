@@ -9,7 +9,6 @@ const link= [
        id:1,
        h1:'FS - QUILTED MAXI CROSS BAG' ,
        p:'$534,33',
-       span:'24% Off',
        h4:'$299,43',
        img:image1
 
@@ -17,7 +16,6 @@ const link= [
     {
         id:2,
         h1:'FS - QUILTED MAXI CROSS BAG' ,
-        p:'$534,33',
         span:'24% Off',
         h4:'$299,43',
         img:image2

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Banner.scss'
+import './Latest.scss'
 import image1 from '../../assets/rasmlar/latest.png'
 import image2 from '../../assets/rasmlar/latest1.png'
 import image3 from '../../assets/rasmlar/latest2.png'
@@ -33,7 +33,7 @@ const data = [
 
 
 let links = data?.map((link) =>(
-    <div className="bannir_lif" key={link.id}>
+    <div className="latest_lif" key={link.id}>
   <img src={link.img} alt="" />
    <h1>{link.h1}</h1>
    <p>{link.p}</p>
@@ -66,8 +66,8 @@ const linkAll= [
 ]
 
 
-let javob = linkAll?.map((el) =>(
-    <div className="bannir_top_rigth" key={el.id}>
+let news = linkAll?.map((el) =>(
+    <div className="latest_top_rigth" key={el.id}>
         <div className="img">
             <img src={el.img} alt="" />
         </div>
@@ -81,30 +81,30 @@ let javob = linkAll?.map((el) =>(
 const Banner = () => {
     return (
         <div>
-            <section className='banner'>
+            <section className='latest'>
                 <div className="container">
-                     <div className="banner_all">
-                        <div className="banner_row">
+                     <div className="latest_all">
+                        <div className="latest_res">
                             <h1>Adidas Men Running Sneakers</h1>
                             <p>Performance and design. Taken right to the edge.</p>
                             <h5>SHOP NOW</h5>
                             <div className="br"></div>
                         </div>
-                        <div className="banner_row">
+                        <div className="latest_res">
                             <img src={image1} alt="" />
                         </div>
                      </div>
                 </div>
             </section>
 <div className="container">
-    <div className="bannir_top">
+    <div className="latest_top">
    {links}
     </div>
    <div className="tixt">
     <h1>LATEST NEWS</h1>
    </div>
-<div className="banir_all">
-   {javob}
+<div className="latest_all">
+   {news}
 </div>
 </div>
         </div>

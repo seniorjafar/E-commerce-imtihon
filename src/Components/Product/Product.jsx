@@ -1,17 +1,27 @@
 import React,{useState,useEffect} from 'react';
 import './Product.scss'
 import { FaStar } from "react-icons/fa6";
-import Loading from '../Loading/Loading';
 import { Link} from 'react-router-dom';
+import Loading from '../Loading/Loading';
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import axios from 'axios';
 import { CiHeart } from "react-icons/ci";
+import {toggleEvent} from '../../Components/context/Heart'
 import { useDispatch,useSelector } from 'react-redux';
 import {addToCart} from '../../Components/context/Card/index'
-import {toggleEvent} from '../../Components/context/Heart'
 import { FaHeart } from "react-icons/fa";
-import axios from 'axios';
 
 const Product = ({data,loading}) => {
+  useEffect(() =>{
+axios
+.get(`https://fakestoreapi.com/products/categories`)
+.then(response =>{
+    setCategories(response.data);
+})
+.catch(error =>{
+})
+},[]);
+
   const dispatch = useDispatch();
   let wishlist = useSelector(s => s.heart.value)
     const [count,setCount] = useState(1);
@@ -19,17 +29,17 @@ const Product = ({data,loading}) => {
     const [setloading,setLoading] = useState(loading)
     const[ value,setValue] =useState('All')
     const [categories,setCategories] = useState([])
-    let javob= value
+    let all= value
    if(value === "All"){
-     javob = '/products'
+     all = '/products'
      }
       else{
-       javob = `/products/category/${value}`
+       all = `/products/category/${value}`
        }
     useEffect(() => {
       setLoading(true);
         axios
-            .get(`https://fakestoreapi.com${javob}?limit=${count * 8}`)
+            .get(`https://fakestoreapi.com${all}?limit=${count * 8}`)
             .then((res) => {
                 setProducts(res.data);
                 setLoading(false);
@@ -46,16 +56,7 @@ const Product = ({data,loading}) => {
         setCount(prevCount => prevCount + 1);
     };
 
-useEffect(() =>{
-axios
-.get(`https://fakestoreapi.com/products/categories`)
-.then(response =>{
-    setCategories(response.data);
-})
-.catch(error =>{
-    console.log('>>>>>>>>>>>>>>>' , error);
-})
-},[]);
+
 
 
 
@@ -113,7 +114,7 @@ const categoryButtons = categories.map((el, idx) => (
                 </div>
             </div>
             <div className="p1">
-                <p>${link.rating.count}<span>${link.price}</span> <span className='span'>{link.rating.rate} Off</span></p>
+                <p>${link.rating.count}<span>$<del>{link.price}</del></span> <span className='span'><h4>{link.rating.rate}</h4> Off</span></p>
             </div>
         </div>
       </div>

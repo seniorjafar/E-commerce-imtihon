@@ -181,6 +181,7 @@ height: 27px;
     padding: 10px 20px;
     margin-top: -10px;
     p{
+        display: flex;
         font-family: Poppins;
         font-size: 18px;
         font-weight: 700;
@@ -188,14 +189,16 @@ height: 27px;
         letter-spacing: 0.5px;
         color: #40BFFF;
         span{
-            font-family: Poppins;
             font-size: 14px;
             font-weight: 400;
             line-height: 21px;
             letter-spacing: 0.5px;
             text-align: left;
-            color: #9098B1;
             padding: 0 10px;
+            background: none;
+            h4{
+            color: #9098B1;
+            }
             
         }
         .span{

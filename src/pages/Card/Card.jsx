@@ -11,13 +11,11 @@ import { useSelector,useDispatch } from 'react-redux';
 import {incremented,decrementCart,removeFromCart,deleteAllCart} from '../../Components/context/Card/index'
 const Bot_Token = "6409705996:AAH7HRsbbymTuGEK2h8joN7nQX0Eypu7MRg"
 const Chat_ID = "-1002098227822"
-const User_ID = "5125371890"
 
 
 
 const Card = () => {
   const [count, setCount] = useState(false);
-  // document.body.style.overflow =  count ? "hidden" : "auto"
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
   const [textarea,setTextarea] = useState('')

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
-import PruductTop from '../../Components/PruductTop/index'
+import Pruducts from '../../Components/Pruducts'
 
 const Another = () => {
     return (
         <div>
-             <PruductTop/> 
+             <Pruducts/> 
                <div className="container">
        <div className="single_week_all">
         <div className="single_week_link">

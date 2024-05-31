@@ -3,7 +3,7 @@ import Main from '../../Components/Main/Main'
 import {useGetProductsQuery} from '../../Components/context/productApi';
 import Product from '../../Components/Product/Product'
 import Footer from '../../Components/Footer/Footer';
-import Banner from '../../Components/Banner/Banner';
+import Latest from '../../Components/Latest/latest';
 import Featured from '../../Components/Featured/Featured';
 const Home = () => {
     const { data,isLoading } = useGetProductsQuery();
@@ -11,7 +11,7 @@ const Home = () => {
         <div>
           <Main/>
             <Product data={data}  loading={isLoading}/>
-            <Banner/>
+            <Latest/>
             <Featured/>
             <Footer/>
 

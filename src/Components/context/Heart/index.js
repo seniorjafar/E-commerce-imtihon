@@ -1,25 +1,26 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
-export const counterSlice = createSlice({
-  name: "wishis",
-  initialState: {
-    value: JSON.parse(localStorage.getItem('wishlist')) ||[]
-  },
-  reducers: {
-    toggleEvent(state, action){
-      let inx = state.value?.findIndex(el => el.id === action.payload.id)
-      if(inx < 0){
-        state.value =[...state.value,action.payload]
-      }
-      else{
-        state.value = state.value?.filter(el => el.id !== action.payload.id)
-      }
-      localStorage.setItem('wishlist',JSON.stringify(state.value))
-    
-    },
-  }
+const initialState = {
+	value: JSON.parse(localStorage.getItem('wishlist')) || []
+};
 
-})
+const wishListSlice = createSlice({
+	name: "wishlist",
+	initialState,
+	reducers: {
+		toggleEvent: (state, action) => {
+			let index = state.value.findIndex(item => item.id === action.payload.id);
 
-export const { toggleEvent } = counterSlice.actions
-export default counterSlice.reducer
+            if (index < 0) {
+                state.value.push(action.payload);
+            } else {
+                state.value.splice(index, 1);
+            }
+
+			localStorage.setItem('wishlist', JSON.stringify(state.value));
+		},
+	}
+});
+
+export const { toggleEvent } = wishListSlice.actions;
+export default wishListSlice.reducer;
