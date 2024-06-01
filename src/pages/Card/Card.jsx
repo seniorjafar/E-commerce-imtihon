@@ -9,8 +9,8 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import './Card.scss'
 import { useSelector,useDispatch } from 'react-redux';
 import {incremented,decrementCart,removeFromCart,deleteAllCart} from '../../Components/context/Card/index'
-const Bot_Token = "6409705996:AAH7HRsbbymTuGEK2h8joN7nQX0Eypu7MRg"
-const Chat_ID = "-1002098227822"
+const Bot_Token = "7169662666:AAGgjFzWPypZwEhit-01km66K6WC9at7LBc"
+const Chat_ID = "-1002075635970"
 
 
 

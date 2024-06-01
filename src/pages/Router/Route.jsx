@@ -82,8 +82,8 @@ const SingleRoute = () => {
     let {data,isLoading,} = useGetDetialProductQuery(id)
     return (
         <div >
-            <PruductTop/>
-          <div className="single">
+            <Pruducts/>
+          {/* <div className="single">
             <div className="container">
               <div className="single_row">
               <div className="single_alt">
@@ -98,11 +98,11 @@ const SingleRoute = () => {
               </div>
             </div>
    
-          </div>
+          </div> */}
           {
             isLoading ? <Loading/> : ""
           }
-          <div className="single_row_link container">
+          {/* <div className="single_row_link container">
           <div className="single_week">
             <div className="img">
                 {
@@ -217,7 +217,7 @@ const SingleRoute = () => {
             </div>
             <div className="all"></div>
 
-  <div className="hammasi_alt">
+  <div className="full_alt">
   <div className="column">
         <div className="span-son">
         <button onClick={onclick}><VscChevronUp /></button>
@@ -356,7 +356,7 @@ const SingleRoute = () => {
       
       </Swiper>
           </div>
-        </div>
+        </div> */}
       <div className="container">
        <div className="single_week_all">
         <div className="single_week_link">
@@ -395,7 +395,7 @@ const SingleRoute = () => {
       isLoading ? <Loading/>
       : ""
     }
-    <div className="hammasi">
+    <div className="full">
             {links}
             </div>
    </div>

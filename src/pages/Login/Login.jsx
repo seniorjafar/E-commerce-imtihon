@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
 import Products from '../../Components/Pruducts';
@@ -11,18 +11,17 @@ const Login = () => {
   const [data, setData] = useState('');
 
   useEffect(() => {
-    console.log(data);
+    
   }, [data]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = {
-      username,
+    const users = {
+      usernames,
       password,
     };
 
     try {
-      // Make an API call to authenticate the user
       const response = await axios.post('/api/login', user);
       setData(response.data);
     } catch (error) {
@@ -55,7 +54,7 @@ const Login = () => {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 type="text"
-                placeholder="Username"
+                autoComplete='off'
               />
             </div>
             <label htmlFor="">Password</label>
@@ -65,7 +64,6 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 type="password"
-                placeholder="Password"
               />
             </div>
             <div className="login_row1">
